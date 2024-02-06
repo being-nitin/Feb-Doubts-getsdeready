@@ -1,0 +1,24 @@
+https://www.geeksforgeeks.org/problems/find-prime-numbers-in-a-range4718/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab
+
+class Solution {
+    ArrayList<Integer> primeRange(int M, int N) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=M;i<=N;i++){
+            if(isPrime(i)){
+                ans.add(i);
+            }
+        }
+        return ans;
+    }
+    static boolean isPrime(int n){
+        if(n==1){
+            return false;
+        }
+        for(int i=2;i*i<=n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
